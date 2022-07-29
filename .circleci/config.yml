@@ -1,9 +1,21 @@
 version: 2.1
+
+# Define the jobs we want to run for this project
 jobs:
-  build:
+  pull-and-build:
     docker:
-      - image: cimg/node:17.2.0 # the primary container, where your job's commands are run
-        
+      - image: arvindr226/alpine-ssh
     steps:
-      - checkout # check out the code in the project directory
-      - run: echo "hello world" # run the `echo` command
+      - checkout
+      - run: ssh -oStrictHostKeyChecking=no -v root@43.205.14.93 "./deploy.sh"
+
+# Orchestrate our job run sequence
+workflows:
+  version: 2
+  build-project:
+    jobs:
+      - pull-and-build:
+          filters:
+            branches:
+              only:
+                - main
