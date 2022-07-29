@@ -4,9 +4,12 @@ jobs:
   build:
     docker:
       - image: cimg/node:17.2.0 # the primary container, where your job's commands are run
-        
+        auth:
+          username: saifshah
+          password: we@WLcicso1214  # context / project UI env-var reference
     steps:
       - checkout # check out the code in the project directory
-      - run: ssh -oStrictHostKeyChecking=no -v $USER@$IP "./deploy.sh" # run the `echo` command
+      - run: ssh -oStrictHostKeyChecking=no -v root@$43.205.14.93 "./deploy.sh" # run the `echo` command
+
 
 
