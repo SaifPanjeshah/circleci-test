@@ -9,7 +9,7 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout # check out the code in the project directory
-      - run: ssh -oStrictHostKeyChecking=no -v root@43.205.14.93 # run  
+      - run: ssh -oStrictHostKeyChecking=no -v root@43.205.14.93 "./deploy.sh"# run  
        
       
 
