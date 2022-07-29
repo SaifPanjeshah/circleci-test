@@ -5,10 +5,10 @@ jobs:
       - image: tomcat # the primary container, where your job's commands are run
         auth:
           username: saifshah
-          password: we@WLcicso1214 # context / project UI env-var reference
+          password: admin123 # context / project UI env-var reference
     steps:
       - checkout # check out the code in the project directory
-      - run:   ssh -oStrictHostKeyChecking=no -v root@43.205.14.93 # run the `echo` comman  
+      - run: ssh -oStrictHostKeyChecking=no -v root@43.205.14.93 # run  
        
       
 
