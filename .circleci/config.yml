@@ -4,8 +4,8 @@ jobs:
     docker:
       - image: cimg/node:17.2.0 # the primary container, where your job's commands are run
         auth:
-          username: mydockerhub-saifshah
-          password: $DOCKERHUB_we@WLcicso1214  # context / project UI env-var reference
+          username: mydockerhub-usr
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout # check out the code in the project directory
       - run:  echo "TestCase Passed"  # run the `echo` command
